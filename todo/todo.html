@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+<link href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css" rel="stylesheet">
+<link href="https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div class="todo">
+            <div class="task"><input type="text" placeholder="enter the task" id="taskin">
+            <button id="btn">ADD</button></div>
+            <div id="showtask" class="showtask"></div>
+        </div>
+    </section>
+    <script>
+        let btn=document.getElementById("btn");
+        let show=document.getElementById("showtask");
+        let texting=document.getElementById("taskin");
+        btn.addEventListener("click",()=>{
+            console.log(texting.value);
+            let addtask=document.createElement("div");
+            addtask.classList.add("addtask");
+            show.appendChild(addtask);
+            let para=document.createElement("p");
+            para.textContent=texting.value;
+            console.log(para);
+            addtask.appendChild(para);
+            let del=document.createElement("div");
+            addtask.appendChild(del);
+            del.classList.add("del");
+            del.innerHTML=`<i class="bx bx-trash"></i> `;
+            del.addEventListener("click",()=>{
+                show.removeChild(addtask);
+            })
+            texting.value='';
+        })
+    </script>
+</body>
+</html>
