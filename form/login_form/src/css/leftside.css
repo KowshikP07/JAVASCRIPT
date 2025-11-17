@@ -1,5 +1,39 @@
 .leftmain{
     height: 100%;
     width: 100%;
-    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.circle{
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    background-color: RGB(253, 168, 1);
+    position: relative;
+    background-size: cover;
+}
+.circle img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius:50%;
+}
+.comp_logo{
+    padding-top:5px;
+    padding-bottom:5px;
+    height: 325px;
+    width: 50px;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-right: 1%;
+}
+.logo_cir{
+    height: 50px;
+    width: 100%;
+    border-radius: 50%;
+    background-color: RGB(253, 168, 1);
 }

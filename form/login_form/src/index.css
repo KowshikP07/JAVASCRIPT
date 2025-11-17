@@ -5,6 +5,7 @@
 }
 body{
   width: 100vw;
+  background-color: black;
 }
 .main{
   height: 100vh;
@@ -13,5 +14,4 @@ body{
   justify-content: center;
   align-items: center;
   grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
-  background-color: aliceblue;
 }
