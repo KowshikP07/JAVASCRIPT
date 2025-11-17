@@ -1,0 +1,15 @@
+.main_form{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 1px solid black;
+    flex-direction: column;
+    /* padding: 5px; */
+    height: 100%;
+    width: 100%;
+}
+.formdiv{
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+}
