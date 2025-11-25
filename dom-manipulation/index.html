@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            min-height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .main{
+            height: 250px;
+            width: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .cont{
+            background-color: green;
+            height: 100%;
+        }
+        .hello{
+            display: none;
+        }
+        #h1{
+            background-color: red;
+            font-size: 25px;
+            color: white;
+            font-weight: 1000;
+        }
+        .cont2{
+            background-color: red;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .cont2 img{
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="cont">
+            <h1 id="h1" class="hello" >hello welcome to js tutorial</h1>
+        <button class="btn">click me</button>
+        </div>
+        <div class="cont2"><img id="imge" src="Screenshot 2025-09-22 222815.png" alt="normal img"></div>
+    </div>
+    <script>
+        let btn=document.getElementsByClassName("btn")[0];
+        let h1=document.getElementById("h1");
+        let image=document.getElementById("imge");
+        btnclicked=()=>{
+            // alert("btn is neing clicked");
+            h1.classList.toggle("hello")
+            image.src="Screenshot 2025-08-25 152139.png"
+            console.log(image.src);
+        }
+        btn.addEventListener("click",btnclicked);
+    </script>
+</body>
+</html>

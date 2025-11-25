@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0px;
+            margin:0px;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            width:100vw;
+            display: flex;
+            align-items: end;
+            justify-content: center;
+            overflow-y: hidden;
+        }
+        .main{
+            height: 80%;
+            width:80%;
+            background-color: aquamarine;
+            display: flex;
+            align-items: end;
+            justify-content: center;
+        }
+        .semi{
+            position: relative;
+            height: 700px;
+            width:700px;
+            border-radius: 50%;
+            background-color: aliceblue;
+            top:60%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+        .prev,.car2,.car3,.car1{
+            position: absolute;
+            height: 100px;
+            width: 100px;
+            background-color: black;
+            top:5%;
+        }
+        .car1{
+            height: 150px;
+            width:200px;
+            left:8%;
+            top:25%;
+            transform:rotate(45deg);
+        }
+        .car2{
+            height: 150px;
+            width:200px;
+            transform: rotate(90deg);
+        }
+        .car3{
+            height: 150px;
+            width:200px;
+            right:8%;
+            top:25%;
+            transform:rotate(-45deg);
+        }
+        .prev{
+            height: 190px;
+            width:190px;
+            background-color: rgb(39, 109, 171);
+            top:36%;
+            transform: rotate(45deg);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .pre,.next{
+            height: 50%;
+            width: 100%;
+            background-color: black;
+            transform: rotate(0deg);
+        }
+        .next{
+            background-color: antiquewhite;
+            height: 50%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="semi">
+            <div class="car1"></div>
+            <div class="prev"><div class="pre"></div><div class="next"></div></div>
+            <div class="car2"></div>
+            <div class="car3"></div>
+        </div>
+    </div>
+</body>
+</html>

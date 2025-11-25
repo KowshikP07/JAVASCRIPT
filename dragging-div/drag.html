@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0px;
+            margin:0px;
+            box-sizing: border-box;
+        }
+        body{
+            height:100vh;
+            width:100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .carousel-wheel{
+            height: 100px;
+            width:100px;
+            background-color: skyblue;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="carousel-wheel"></div>
+    </div>
+    <script>
+        let cont=document.getElementsByClassName("carousel-wheel")[0];
+        function drag({movementX,movementY}){
+            let styles=window.getComputedStyle(cont);
+            let left=parseInt(styles.left);
+            let top=parseInt(styles.top);
+            cont.style.left=`${left+movementX}px`;
+            cont.style.top=`${top+movementY}px`;
+        }
+        cont.addEventListener("mousedown",()=>{
+            cont.addEventListener("mousemove",drag);
+        });
+        cont.addEventListener("mouseup",()=>{
+            cont.removeEventListener("mousemove",drag);
+        });
+    </script>
+</body>
+</html>
