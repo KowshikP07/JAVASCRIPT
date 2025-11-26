@@ -13,7 +13,7 @@ body{
 }
 .main{
     margin-top: 2%;
-    padding:5px;
+    padding:10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,22 +25,39 @@ body{
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    height: 450px;
-    width: 525px;
+    height: 425px;
+    width: 475px;
+    position: relative;
 }
 .top .slide{
     background-color: red;
     height: 450px;
-    width: 400px;
+    width: 475px;
     flex: 0 0 auto;
+    position: absolute;
+    transform: translateX(0);
+    transition: transform 1s ease;
+}
+.slide.active{
+    transform: translateX(0);
+}
+.slide:nth-child(1){
+    background-color: red;
+}
+.slide:nth-child(2){
+    background-color: green;
+}
+.slide:nth-child(3){
+    background-color: blue;
 }
 .bottom{
     height: 225px;
-    width: 525px;
+    width: 475px;
     background-color: wheat;
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    overflow: hidden;
 }
 .prevbtn,.nextbtn{
     height: 50%;
@@ -49,6 +66,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 .prevbtn{
     border-top-left-radius: 100%;
@@ -57,7 +75,73 @@ body{
     border-top-right-radius: 100%;
 }
 .mini_slides{
-    height: 85%;
-    width: 40%;
+    height: 170px;
+    width: 180px;
     background-color: white;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+.minislide{
+    height: 100%;
+    width: 180px;
+    background-color: black;
+    flex-shrink: 0;
+    position: absolute;
+    top:0;
+    left:0;
+    transform: translate(0);
+    transition: transform 1s;
+}
+.minislide.active{
+    transform: translate(0);
+}
+.minislide:nth-child(1){
+    height: 100%;
+    width: 180px;
+    background-color: red;
+}
+.minislide:nth-child(2){
+    height: 100%;
+    width: 180px;
+    background-color: green;
+}
+.minislide:nth-child(3){
+    height: 100%;
+    width: 180px;
+    background-color: blue;
+}
+.iconr,.iconl{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 2rem;
+}
+.iconr{
+    left:30%;
+}
+.minislide.exit-right{
+    transform: translateX(100%);
+}
+.minislide.exit-left{
+    transform: translateX(-100%);
+}
+.minislide.entry-right{
+    transform: translateX(100%);
+}
+.minislide.entry-left{
+    transform: translateX(-100%);
+}
+.slide.exit-right{
+    transform: translateX(100%);
+}
+.slide.exit-left{
+    transform: translateX(-100%);
+}
+.slide.entry-right{
+    transform: translateX(100%);
+}
+.slide.entry-left{
+    transform: translateX(-100%);
 }
