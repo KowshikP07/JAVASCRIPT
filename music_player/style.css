@@ -6,32 +6,53 @@
 body{
     display: flex;
     align-items: flex-start;
-    justify-content: center;
-    background-color: greenyellow;
+    justify-content: space-around;
     height: 100vh;
     width: 100vw;
+    background-color: rgb(246, 27, 11);
 }
+.title{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.title h1 {
+    text-transform: uppercase;
+      font-family: 'THE AMAZING SPIDER-MAN', sans-serif;
+      color: black;
+      letter-spacing: 0;
+      font-size: 4rem;
+      -webkit-text-stroke-color: white;
+      -webkit-text-stroke-width: 0.1px;
+    }
 .main{
-    margin-top: 2%;
+    margin-top: 1%;
     padding:10px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    border: 1px solid black;
+    background-color: rgb(5, 59, 120);
+    border-radius: 25px;
+    box-shadow: 5px 5px 8px gray;
+    border: 2px solid white;
+    /* margin-right: 5%; */
 }
 .top{
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    height: 425px;
+    height: 480px;
     width: 475px;
     position: relative;
+    border-radius: 25px;
 }
 .top .slide{
     background-color: red;
-    height: 450px;
+    height: 500px;
     width: 475px;
     flex: 0 0 auto;
     position: absolute;
@@ -51,22 +72,23 @@ body{
     background-color: blue;
 }
 .bottom{
-    height: 225px;
+    height: 205px;
     width: 475px;
-    background-color: wheat;
     display: flex;
     align-items: flex-end;
     justify-content: center;
     overflow: hidden;
+    border-radius: 25px;
 }
 .prevbtn,.nextbtn{
     height: 50%;
     width: 25%;
-    border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    background-color: black;
+    border: 2px solid white;
 }
 .prevbtn{
     border-top-left-radius: 100%;
@@ -77,7 +99,6 @@ body{
 .mini_slides{
     height: 170px;
     width: 180px;
-    background-color: white;
     display: flex;
     overflow: hidden;
     position: relative;
@@ -85,13 +106,15 @@ body{
 .minislide{
     height: 100%;
     width: 180px;
-    background-color: black;
     flex-shrink: 0;
     position: absolute;
     top:0;
     left:0;
     transform: translate(0);
     transition: transform 1s;
+    border: 2px solid white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 .minislide.active{
     transform: translate(0);
@@ -113,13 +136,28 @@ body{
 }
 .iconr,.iconl{
     position: absolute;
-    top:50%;
-    left: 50%;
+    top:60%;
     transform: translate(-50%,-50%);
     font-size: 2rem;
+    color: white;
+}
+img{
+    position: absolute;
+    top:0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+}
+.minislide img{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 .iconr{
-    left:30%;
+    left:38%;
+}
+.iconl{
+    right:8%;
 }
 .minislide.exit-right{
     transform: translateX(100%);
