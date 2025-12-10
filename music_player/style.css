@@ -17,6 +17,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 .title h1 {
     text-transform: uppercase;
@@ -49,6 +50,7 @@ body{
     width: 475px;
     position: relative;
     border-radius: 25px;
+    border: 2px solid white;
 }
 .top .slide{
     background-color: red;

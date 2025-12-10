@@ -1,43 +1,8 @@
-// gsap.to(".logo",{
-//     duration:2,
-//     scale:0.2,
-//     delay:0.1,
-//     opacity:0,
-//     repeat:-1,
-//     yolo:true
-// })
-// gsap.from("li",{
-//     // y:-20,
-//     duration:1,
-//     // delay:0.5,
-//     opacity:0,
-//     scale:0,
-//     stagger: 0.5
-// })
-// gsap.to(".box", {
-//   opacity: 0,
-//   duration: 3,   // very quick fade → blink
-//   repeat: -1,
-//   yoyo: true,
-//   ease: "power1.in"
-// });
-// gsap.to(".box", {
-//   opacity: 0,
-//   duration: 0.5,     // how fast it turns OFF
-//   repeat: -1,        // infinite loop
-// //   yoyo: true,        // come back to opacity:1
-//   repeatDelay: 2,    // wait 2 seconds before turning ON again
-//   ease: "power1.inOut",
-//   stagger: 1
-// });
-// 
-// Make sure SplitText is included
-// Animate h1 characters
 let split = new SplitText(".page1 h1", { type: "chars" });
 
 gsap.from(split.chars, {
   opacity: 0,
-  duration: 1,
+  duration: 3,
   stagger: 0.05,
   scrollTrigger: {
     trigger: ".page1",
@@ -62,5 +27,33 @@ gsap.to(".page2 .box", {
   }
 });
 
+gsap.to(".page3 h3",{
+  transform:"translate(-150%)",
+  scrollTrigger:{
+    trigger:".page3",
+    scroller:"body",
+    start:"top 0%",
+    end:"top -100%",
+    scrub:10,
+    pin:true
+  }
+})
+let initial="M 10 150 Q 400 150 790 150"
+let final="M 10 150 Q 400 150 790 150"
+let line=document.querySelector("#line")
+line.addEventListener("mousemove",function(delts){
+  console.log("mouse hover");
+  initial=`M 10 150 Q 400 ${delts.offsetY} 790 150`
+  gsap.to("svg path",{
+    attr:{d:initial},
+    duration:0.5
+  })
+})
+line.addEventListener("mouseleave",function(){
 
-
+  gsap.to("svg path",{
+    attr:{d:final},
+    duration:2.5,
+    ease: "elastic.out(1.5,0.3)"
+  })
+})
